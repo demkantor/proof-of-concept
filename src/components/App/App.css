@@ -1,0 +1,101 @@
+body {
+  font-family: 'Raleway';
+  background: url(https://i.gyazo.com/9024e4cc2d29408dd08bd67a54b355c8.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+h1 {
+  background: #2980B9;
+  margin:0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: normal;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+	background: #fff;
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+}
+
+li:nth-child(2n) {
+	background: #f7f7f7;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li:hover span {
+  width: 40px;
+  opacity: 1.0;
+}
+
+li.over {
+  border: 1px dashed grey;
+}
+
+.fa-plus-square {
+  float: right;
+}
+
+.fa-minus-square {
+  float: right;
+}
+
+span{
+  background: #e74c3c;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 0;
+	display: inline-block;
+	transition: .3s linear;
+  opacity: 0
+}
+
+input{
+  font-size: 18px;
+  background: #F5F5F5;
+  color: #2980B9;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px;
+}
+
+input:focus{
+  border: 2px solid #2980B9;
+  background: white;
+  outline: none;
+}
+
+.show{
+  transition: ease-in-out;
+  transition-delay: 2s
+}
+
+.container{
+  margin: 250px auto;
+  width: 600px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  background: #F5F5F5;
+}
+
+.completed{
+  text-decoration: line-through;
+  color: grey;
+}
+
