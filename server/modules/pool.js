@@ -3,8 +3,8 @@ let config = {};
 
 
     config = {
-        user: null || 'con',
-        password: null || 'secretpass', 
+        // user: null || 'con',
+        // password: null || 'secretpass', 
         host: 'localhost', 
         port: 5432,
         database: 'proof_of_concept', 

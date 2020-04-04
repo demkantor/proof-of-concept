@@ -15,6 +15,22 @@ class MainList extends Component {
         this.props.dispatch({type: 'GET_LIST'})
     }
 
+    drag=(event)=>{
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    drop=(event)=>{
+        event.preventDefault();
+        let source = document.getElementsByName
+        source.innerHTML = event.target.innerHTML;
+        //update text in drop target
+        event.target.innerHTML = event.dataTransfer.getData("text/plain");
+    }
+
+    dropMe=(event)=>{
+        event.preventDefault();
+    }
+
     newTask=(e)=>{
         e.preventDefault()
         console.log('new task', this.state.newTask)
@@ -47,7 +63,8 @@ class MainList extends Component {
             }
             <ul>
                 {this.props.reduxState.mainListReducer.map(task=>
-                    <li key={task.id} draggable="true" onClick={()=>this.toggleComplete(task.id)}>
+                    <li key={task.id} name={task.id} draggable="true" onDragStart={(event)=>this.drag(event)} 
+                        onClick={()=>this.toggleComplete(task.id)} onDragOver={(event)=>this.dropMe(event)} onDrop={(event)=>this.drop(event)}>
                         <span onClick={()=>this.remove(task.id)}><i className="fa fa-trash"></i></span>
                         {task.tasks}</li>
                 )}
